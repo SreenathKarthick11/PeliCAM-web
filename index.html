@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PeliCAM</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; text-align: center; }
+    header { padding: 40px; background: #007BFF; color: white; }
+    header h1 { margin-bottom: 20px; }
+    .btn {
+      display: inline-block; margin: 10px; padding: 12px 24px;
+      background: white; color: #007BFF; border-radius: 8px; 
+      text-decoration: none; font-weight: bold;
+    }
+    .btn:hover { background: #e6e6e6; }
+    section { padding: 60px 20px; max-width: 900px; margin: auto; text-align: left; }
+    h1 { text-align: center; color: #222; }
+    ul.features li { margin: 12px 0; font-size: 18px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 6px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- Header with buttons -->
+  <header>
+    <h1>PeliCAM</h1>
+    <p>A PyQt-based desktop app for visualizing deep learning model explanations using CAM, LIME, and bounding boxes.</p>
+    <div>
+      <a class="btn" href="#features">Features</a>
+      <a class="btn" href="#docs">Docs</a>
+      <a class="btn" href="#download">Download</a>
+      <a class="btn" href="#about">About</a>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h1>Features</h1>
+    <ul class="features">
+      <li>🖼️ <b>Load Images & Models</b> – Import images and PyTorch models easily.</li>
+      <li>🔥 <b>Apply CAM Techniques</b> – Visualize with Grad-CAM, Layer-CAM, etc.</li>
+      <li>✏️ <b>Draw Bounding Boxes</b> – Annotate and compare ground truth vs. CAM outputs.</li>
+      <li>🎯 <b>LIME Explanations</b> – Explore positive and negative influential features.</li>
+      <li>💾 <b>Save & Compare Outputs</b> – Store results, tabbed viewer for side-by-side comparison.</li>
+    </ul>
+  </section>
+
+  <!-- Docs Section -->
+  <section id="docs">
+    <h1>Documentation</h1>
+    <p>You can download the full <a href="downloads/PeliCAM.pdf" download>PeliCAM Manual (PDF)</a>.</p>
+
+    <h2>FAQ</h2>
+    <ul>
+      <li><b>What models does PeliCAM support?</b> Built-in (ResNet50, VGG16, VGG19) + custom PyTorch models.</li>
+      <li><b>Which image formats are supported?</b> PNG, JPEG, JPG.</li>
+      <li><b>Why is my CAM/LIME output not showing?</b> Ensure you selected model, layer, and pressed Generate.</li>
+      <li><b>Can I compare outputs?</b> Yes, each visualization opens in a separate tab.</li>
+    </ul>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download">
+    <h1>Download PeliCAM</h1>
+    <ul>
+      <li><a href="downloads/PeliCAM.exe" download>💻 Windows Executable</a></li>
+      <li><a href="downloads/PeliCAM.AppImage" download>🐧 Linux AppImage</a></li>
+      <li><a href="downloads/PeliCAM.pdf" download>📖 Manual (PDF)</a></li>
+    </ul>
+
+    <p><b>Checksums</b> (verify file integrity):</p>
+    <pre>
+sha256sum PeliCAM.exe → [paste hash here]
+sha256sum PeliCAM.AppImage → [paste hash here]
+    </pre>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h1>About & Credits</h1>
+    <p>PeliCAM was developed at IIT Palakkad by:</p>
+    <ul>
+      <li>M Murali Karthick</li>
+      <li>M Sreenath Karthick</li>
+    </ul>
+
+    <p>This work is part of our research on Explainable AI (XAI).</p>
+    <p>For context, you can read our <a href="downloads/XAI_Report.pdf">Explainable AI Report (PDF)</a>.</p>
+  </section>
+
+</body>
+</html>
