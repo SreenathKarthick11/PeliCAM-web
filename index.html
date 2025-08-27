@@ -4,116 +4,107 @@
   <meta charset="UTF-8">
   <title>PeliCAM</title>
   <style>
-    /* Global Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    /* General Styling */
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #0d0d0d; /* black background */
-      color: #e0e0e0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0d1117; /* dark */
+      color: #e6edf3;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #00f5d4, #00bbf9);
-      color: #0d0d0d;
-      padding: 60px 20px;
-      text-align: center;
+    h1, h2 {
+      font-weight: bold;
+      color: #00e5ff; /* cyan green */
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #00e5ff, #ff9100);
+      color: #0d1117;
+    }
     header h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
-
     header p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
+      margin-bottom: 30px;
     }
-
     .btn {
       display: inline-block;
-      margin: 15px;
-      padding: 14px 28px;
-      background: #0d0d0d;
-      color: #00f5d4;
-      border: 2px solid #00f5d4;
-      border-radius: 30px;
-      text-decoration: none;
+      margin: 10px;
+      padding: 12px 28px;
+      background: #0d1117;
+      color: #00e5ff;
+      border: 2px solid #00e5ff;
+      border-radius: 10px;
       font-weight: bold;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
-
     .btn:hover {
-      background: #00f5d4;
-      color: #0d0d0d;
-      box-shadow: 0 0 15px #00f5d4;
+      background: #00e5ff;
+      color: #0d1117;
     }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: #00f5d4;
-    }
-
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #ffa94d; /* orange highlight */
+    /* Card-like sections */
+    .card {
+      background: #161b22;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     ul.features li {
-      margin: 18px 0;
-      font-size: 1.1rem;
-      padding: 12px;
-      border-left: 4px solid #00f5d4;
-      background: #1a1a1a;
-      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 18px;
     }
 
-    ul li a {
-      color: #00bbf9;
-      text-decoration: none;
+    /* Download Buttons */
+    .download-btn {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 14px 30px;
+      background: #00e676; /* green */
+      color: #0d1117;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #00c853;
     }
 
-    ul li a:hover {
-      text-decoration: underline;
-      color: #ffa94d;
-    }
-
-    pre {
-      background: #1a1a1a;
-      padding: 12px;
-      border-radius: 8px;
-      color: #00f5d4;
-    }
-
-    /* Footer */
     footer {
+      background: #161b22;
+      padding: 20px;
       text-align: center;
-      padding: 30px;
-      background: #111;
-      color: #777;
-      margin-top: 50px;
+      font-size: 14px;
+      color: #aaa;
     }
-
-    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
-  <!-- Header with buttons -->
+  <!-- Header -->
   <header>
     <h1>PeliCAM</h1>
-    <p>A PyQt-based desktop app for visualizing deep learning model explanations using CAM, LIME, and bounding boxes.</p>
+    <p>A PyQt-based desktop app for visualizing deep learning model explanations with CAM, LIME, and bounding boxes.</p>
     <div>
       <a class="btn" href="#features">Features</a>
       <a class="btn" href="#docs">Docs</a>
@@ -124,55 +115,64 @@
 
   <!-- Features Section -->
   <section id="features">
-    <h1>Features</h1>
-    <ul class="features">
-      <li>🖼️ <b>Load Images & Models</b> – Import images and PyTorch models easily.</li>
-      <li>🔥 <b>Apply CAM Techniques</b> – Visualize with Grad-CAM, Layer-CAM, etc.</li>
-      <li>✏️ <b>Draw Bounding Boxes</b> – Annotate and compare ground truth vs. CAM outputs.</li>
-      <li>🎯 <b>LIME Explanations</b> – Explore positive and negative influential features.</li>
-      <li>💾 <b>Save & Compare Outputs</b> – Store results, tabbed viewer for side-by-side comparison.</li>
-    </ul>
+    <div class="card">
+      <h1>🚀 Features</h1>
+      <ul class="features">
+        <li>🖼️ <b>Load Images & Models</b> – Import images and PyTorch models easily.</li>
+        <li>🔥 <b>Apply CAM Techniques</b> – Grad-CAM, Layer-CAM, and more.</li>
+        <li>✏️ <b>Draw Bounding Boxes</b> – Compare ground truth vs. CAM outputs.</li>
+        <li>🎯 <b>LIME Explanations</b> – Positive/negative influential features.</li>
+        <li>💾 <b>Save & Compare Outputs</b> – Side-by-side tabbed comparison.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Docs Section -->
   <section id="docs">
-    <h1>Documentation</h1>
-    <p>You can download the full <a href="downloads/PeliCAM.pdf" download>PeliCAM Manual (PDF)</a>.</p>
+    <div class="card">
+      <h1>📖 Documentation</h1>
+      <p>You can download the full <a href="downloads/PeliCAM.pdf" class="download-btn" download>PeliCAM Manual (PDF)</a>.</p>
 
-    <h2>FAQ</h2>
-    <ul>
-      <li><b>What models does PeliCAM support?</b> Built-in (ResNet50, VGG16, VGG19) + custom PyTorch models.</li>
-      <li><b>Which image formats are supported?</b> PNG, JPEG, JPG.</li>
-      <li><b>Why is my CAM/LIME output not showing?</b> Ensure you selected model, layer, and pressed Generate.</li>
-      <li><b>Can I compare outputs?</b> Yes, each visualization opens in a separate tab.</li>
-    </ul>
+      <h2>FAQ</h2>
+      <ul>
+        <li><b>Supported models?</b> ResNet50, VGG16, VGG19 + custom PyTorch.</li>
+        <li><b>Image formats?</b> PNG, JPEG, JPG.</li>
+        <li><b>Why CAM/LIME output missing?</b> Ensure model, layer, and “Generate” are selected.</li>
+        <li><b>Can I compare outputs?</b> Yes, each visualization opens in a separate tab.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Download Section -->
   <section id="download">
-    <h1>Download PeliCAM</h1>
-    <ul>
-      <li><a href="downloads/PeliCAM.exe" download>💻 Windows Executable</a></li>
-      <li><a href="downloads/PeliCAM.AppImage" download>🐧 Linux AppImage</a></li>
-      <li><a href="downloads/PeliCAM.pdf" download>📖 Manual (PDF)</a></li>
-    </ul>
+    <div class="card">
+      <h1>⬇️ Download PeliCAM</h1>
+      <p>Choose your platform:</p>
+      <ul>
+        <li><a href="downloads/PeliCAM.exe" class="download-btn" download>💻 Windows Executable</a></li>
+        <li><a href="downloads/PeliCAM.AppImage" class="download-btn" download>🐧 Linux AppImage</a></li>
+        <li><a href="downloads/PeliCAM.pdf" class="download-btn" download>📖 Manual (PDF)</a></li>
+        <li><a href="downloads/XAI_Report.pdf" class="download-btn" download>📄 XAI Research Report</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
-    <h1>About & Credits</h1>
-    <p>PeliCAM was developed at IIT Palakkad by:</p>
-    <ul>
-      <li>M Murali Karthick</li>
-      <li>M Sreenath Karthick</li>
-    </ul>
-
-    <p>This work is part of our research on Explainable AI (XAI).</p>
-    <p>For context, you can read our <a href="downloads/XAI_Report.pdf">Explainable AI Report (PDF)</a>.</p>
+    <div class="card">
+      <h1>👨‍💻 About & Credits</h1>
+      <p>PeliCAM was developed at IIT Palakkad by:</p>
+      <ul>
+        <li><b>M Murali Karthick</b></li>
+        <li><b>M Sreenath Karthick</b></li>
+      </ul>
+      <p>Part of our research in Explainable AI (XAI).</p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 PeliCAM Project | Built with ❤ at IIT Palakkad</p>
+    © 2025 PeliCAM | Built with ❤️ at IIT Palakkad
   </footer>
 
 </body>
