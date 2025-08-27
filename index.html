@@ -4,19 +4,107 @@
   <meta charset="UTF-8">
   <title>PeliCAM</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333; text-align: center; }
-    header { padding: 40px; background: #007BFF; color: white; }
-    header h1 { margin-bottom: 20px; }
-    .btn {
-      display: inline-block; margin: 10px; padding: 12px 24px;
-      background: white; color: #0e67c6; border-radius: 8px; 
-      text-decoration: none; font-weight: bold;
+    /* Global Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0d0d0d; /* black background */
+      color: #e0e0e0;
+      line-height: 1.6;
     }
-    .btn:hover { background: #e6e6e6; }
-    section { padding: 60px 20px; max-width: 900px; margin: auto; text-align: left; }
-    h1 { text-align: center; color: #222; }
-    ul.features li { margin: 12px 0; font-size: 18px; }
-    pre { background: #f5f5f5; padding: 10px; border-radius: 6px; }
+
+    header {
+      background: linear-gradient(135deg, #00f5d4, #00bbf9);
+      color: #0d0d0d;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 14px 28px;
+      background: #0d0d0d;
+      color: #00f5d4;
+      border: 2px solid #00f5d4;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #00f5d4;
+      color: #0d0d0d;
+      box-shadow: 0 0 15px #00f5d4;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #00f5d4;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #ffa94d; /* orange highlight */
+    }
+
+    ul.features li {
+      margin: 18px 0;
+      font-size: 1.1rem;
+      padding: 12px;
+      border-left: 4px solid #00f5d4;
+      background: #1a1a1a;
+      border-radius: 6px;
+    }
+
+    ul li a {
+      color: #00bbf9;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+      color: #ffa94d;
+    }
+
+    pre {
+      background: #1a1a1a;
+      padding: 12px;
+      border-radius: 8px;
+      color: #00f5d4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #777;
+      margin-top: 50px;
+    }
+
     html { scroll-behavior: smooth; }
   </style>
 </head>
@@ -68,12 +156,6 @@
       <li><a href="downloads/PeliCAM.AppImage" download>🐧 Linux AppImage</a></li>
       <li><a href="downloads/PeliCAM.pdf" download>📖 Manual (PDF)</a></li>
     </ul>
-
-    <p><b>Checksums</b> (verify file integrity):</p>
-    <pre>
-sha256sum PeliCAM.exe → [paste hash here]
-sha256sum PeliCAM.AppImage → [paste hash here]
-    </pre>
   </section>
 
   <!-- About Section -->
@@ -88,6 +170,10 @@ sha256sum PeliCAM.AppImage → [paste hash here]
     <p>This work is part of our research on Explainable AI (XAI).</p>
     <p>For context, you can read our <a href="downloads/XAI_Report.pdf">Explainable AI Report (PDF)</a>.</p>
   </section>
+
+  <footer>
+    <p>© 2025 PeliCAM Project | Built with ❤ at IIT Palakkad</p>
+  </footer>
 
 </body>
 </html>
