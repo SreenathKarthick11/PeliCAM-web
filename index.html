@@ -3,99 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <title>PeliCAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Styling */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #0d1117; /* dark */
-      color: #e6edf3;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
     }
 
-    h1, h2 {
-      font-weight: bold;
-      color: #00e5ff; /* cyan green */
+    header {
+      background-color: #1b51a1;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    a {
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px 8px;
+      padding: 12px 25px;
+      background-color: white;
+      color: #161b22;
+      border: 2px solid white;
+      border-radius: 6px;
+      font-size: 16px;
       text-decoration: none;
-      color: inherit;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #161b22;
+      color: white;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 30px 20px;
       max-width: 900px;
-      margin: auto;
+      margin: 30px auto;
+      background-color: #161b22;
+      border-radius: 10px;
     }
 
-    /* Header */
-    header {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #00e5ff, #ff9100);
-      color: #0d1117;
-    }
-    header h1 {
-      font-size: 3rem;
+    h1 {
+      font-size: 28px;
       margin-bottom: 20px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 28px;
-      background: #0d1117;
-      color: #00e5ff;
-      border: 2px solid #00e5ff;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #00e5ff;
-      color: #0d1117;
+      color: #ffffff;
     }
 
-    /* Card-like sections */
-    .card {
-      background: #161b22;
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #58a6ff;
     }
 
-    ul.features li {
-      margin: 12px 0;
-      font-size: 18px;
-    }
-
-    /* Download Buttons */
-    .download-btn {
-      display: inline-block;
+    ul li {
       margin: 10px 0;
-      padding: 14px 30px;
-      background: #00e676; /* green */
-      color: #0d1117;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: 0.3s;
     }
-    .download-btn:hover {
-      background: #00c853;
+
+    .download-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .download-link a {
+      display: inline-block;
+      background: #2ea043;
+      color: white;
+      padding: 12px 22px;
+      margin: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .download-link a:hover {
+      background: #145f23;
     }
 
     footer {
-      background: #161b22;
-      padding: 20px;
       text-align: center;
-      font-size: 14px;
-      color: #aaa;
+      padding: 20px;
+      background: #161b22;
+      color: #8b949e;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -106,68 +115,76 @@
     <h1>PeliCAM</h1>
     <p>A PyQt-based desktop app for visualizing deep learning model explanations with CAM, LIME, and bounding boxes.</p>
     <div>
-      <a class="btn" href="#features">Features</a>
-      <a class="btn" href="#docs">Docs</a>
-      <a class="btn" href="#download">Download</a>
-      <a class="btn" href="#about">About</a>
+      <a class="button" href="#features">Features</a>
+      <a class="button" href="#overview">Overview</a>
+      <a class="button" href="#docs">Docs</a>
+      <a class="button" href="#download">Download</a>
+      <a class="button" href="#about">About</a>
     </div>
   </header>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section id="features">
-    <div class="card">
-      <h1>🚀 Features</h1>
-      <ul class="features">
-        <li>🖼️ <b>Load Images & Models</b> – Import images and PyTorch models easily.</li>
-        <li>🔥 <b>Apply CAM Techniques</b> – Grad-CAM, Layer-CAM, and more.</li>
-        <li>✏️ <b>Draw Bounding Boxes</b> – Compare ground truth vs. CAM outputs.</li>
-        <li>🎯 <b>LIME Explanations</b> – Positive/negative influential features.</li>
-        <li>💾 <b>Save & Compare Outputs</b> – Side-by-side tabbed comparison.</li>
-      </ul>
-    </div>
+    <h1> Features</h1>
+    <ul>
+      <li><b>Load Images & Models</b> – Import images and PyTorch models easily.</li>
+      <li><b>Apply CAM Techniques</b> – Grad-CAM, Layer-CAM, and more.</li>
+      <li><b>Draw Bounding Boxes</b> – Compare ground truth vs. CAM outputs.</li>
+      <li><b>LIME Explanations</b> – Positive/negative influential features.</li>
+      <li><b>Save & Compare Outputs</b> – Tabbed results with side-by-side comparison.</li>
+    </ul>
   </section>
 
-  <!-- Docs Section -->
+  <!-- Overview -->
+  <section id="overview">
+    <h1>Main Window Overview</h1>
+    <p>The main window has two parts:</p>
+    <ul>
+      <li><b>Sidebar</b>: Control panel for models, CAM, bounding boxes, LIME.</li>
+      <li><b>Image Viewer</b>: Tabbed display for outputs (original, CAM, LIME).</li>
+    </ul>
+    <h2>Sidebar Sections</h2>
+    <ul>
+      <li>Section 1 – Load Image & Model</li>
+      <li>Section 2 – CAM & Bounding Box</li>
+      <li>Section 3 – LIME Explanations</li>
+      <li>Section 4 – Final Utilities</li>
+    </ul>
+  </section>
+
+  <!-- Docs -->
   <section id="docs">
-    <div class="card">
-      <h1>📖 Documentation</h1>
-      <p>You can download the full <a href="downloads/PeliCAM.pdf" class="download-btn" download>PeliCAM Manual (PDF)</a>.</p>
-
-      <h2>FAQ</h2>
-      <ul>
-        <li><b>Supported models?</b> ResNet50, VGG16, VGG19 + custom PyTorch.</li>
-        <li><b>Image formats?</b> PNG, JPEG, JPG.</li>
-        <li><b>Why CAM/LIME output missing?</b> Ensure model, layer, and “Generate” are selected.</li>
-        <li><b>Can I compare outputs?</b> Yes, each visualization opens in a separate tab.</li>
-      </ul>
-    </div>
+    <h1>Documentation</h1>
+    <p>Download the <a href="downloads/PeliCAM.pdf" class="button" download>PeliCAM Manual (PDF)</a>.</p>
+    <h2>FAQ</h2>
+    <ul>
+      <li><b>Supported Models?</b> ResNet50, VGG16, VGG19, and custom PyTorch.</li>
+      <li><b>Image Formats?</b> PNG, JPEG, JPG.</li>
+      <li><b>Missing Output?</b> Ensure selections made + click Generate.</li>
+      <li><b>LIME Progress Bar?</b> Shows computation — wait until done.</li>
+      <li><b>Compare Outputs?</b> Yes, every result opens in a new tab.</li>
+    </ul>
   </section>
 
-  <!-- Download Section -->
+  <!-- Download -->
   <section id="download">
-    <div class="card">
-      <h1>⬇️ Download PeliCAM</h1>
-      <p>Choose your platform:</p>
-      <ul>
-        <li><a href="downloads/PeliCAM.exe" class="download-btn" download>💻 Windows Executable</a></li>
-        <li><a href="downloads/PeliCAM.AppImage" class="download-btn" download>🐧 Linux AppImage</a></li>
-        <li><a href="downloads/PeliCAM.pdf" class="download-btn" download>📖 Manual (PDF)</a></li>
-        <li><a href="downloads/XAI_Report.pdf" class="download-btn" download>📄 XAI Research Report</a></li>
-      </ul>
+    <h1>Download</h1>
+    <div class="download-link">
+      <a href="downloads/PeliCAM.exe" download>Windows</a>
+      <a href="downloads/PeliCAM.pdf" download>Manual</a>
+      <a href="downloads/XAI_Report.pdf" download>XAI Report</a>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
-    <div class="card">
-      <h1>👨‍💻 About & Credits</h1>
-      <p>PeliCAM was developed at IIT Palakkad by:</p>
-      <ul>
-        <li><b>M Murali Karthick</b></li>
-        <li><b>M Sreenath Karthick</b></li>
-      </ul>
-      <p>Part of our research in Explainable AI (XAI).</p>
-    </div>
+    <h1>👨‍💻 About & Credits</h1>
+    <p>Developed at IIT Palakkad by:</p>
+    <ul>
+      <li><b>M Murali Karthick</b></li>
+      <li><b>M Sreenath Karthick</b></li>
+    </ul>
+    <p>Part of our research in Explainable AI (XAI).</p>
   </section>
 
   <!-- Footer -->
